@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: dcqd67h0p-java-quarkus
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: dcqd67h0p-java-quarkus 
+  name: dcqd67h0p-java-quarkus
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: dcqd67h0p-java-quarkus
+    weight: 100 
